@@ -6,5 +6,6 @@ public class TicTacToeGameMain {
 		System.out.println("Welcome to Tic Tac Toe game");
 		UC1 object = new UC1();
 		object.board();
+		object.playerInput();
 	}
 }
