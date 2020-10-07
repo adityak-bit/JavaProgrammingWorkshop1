@@ -3,28 +3,36 @@ package com.example;
 import java.util.Scanner;
 
 public class TicTacToeGame {
+	char[] board = new char[10];
+	private static char move;
+	private Scanner sc;
+	private int index;
+	
 	public static void main(String[] args) {
 		System.out.println("Welcome to Tic Tac Toe game");
-		/*
-		 * Scanner userInput = new Scanner(System.in); char userLetter =
-		 * chooseUserLetter(userInput); char computerLetter = (userLetter == 'X') ? 'O'
-		 * : 'X';
-		 */
 		TicTacToeGame object = new TicTacToeGame();
-		object.showBoard();
+		System.out.println("Choose your move index");
+		object.userMove();
+		object.showBoard(move);
 	}
-
-	/*
-	 * private static char chooseUserLetter(Scanner userInput) {
-	 * System.out.println("choose your letter: "); return
-	 * userInput.next().toUpperCase().charAt(0); }
-	 */
-
-	public void showBoard() {
-		char[] board = new char[10];
+	
+	public void showBoard(char c) {
+		
 		for (int i = 1; i < board.length; i = i + 3) {
-			System.out.println("----------------");
-			System.out.println(board[i] + "\t" + board[i + 1] + "\t" + board[i + 2] + "\n");
+			board[index] =c;
+			System.out.println("------------------");
+			System.out.println(board[i] + "\t" + board[i + 1] + "\t" + board[i + 2]+ "\n");
 		}
+	}
+	
+	public void userMove() {
+		sc = new Scanner(System.in);
+		int index = sc.nextInt();
+		if(board[index] != 'X' && board[index] != 'O') {
+			board[index] = 'O';
+		    move = board[index];
+		}
+		else
+			System.out.println("Index not free");
 	}
 }
