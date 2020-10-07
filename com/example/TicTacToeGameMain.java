@@ -8,7 +8,7 @@ public class TicTacToeGameMain {
 		System.out.println("Welcome to Tic Tac Toe game");
 		Scanner userInput = new Scanner(System.in);
 		char userLetter = chooseUserLetter(userInput);
-		char computerLetter = (userLetter == 'X') ? '0' : 'X';
+		char computerLetter = (userLetter == 'X') ? 'O' : 'X';
 	}
 	
 	private static char chooseUserLetter(Scanner userInput) {
